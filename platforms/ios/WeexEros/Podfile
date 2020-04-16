@@ -1,0 +1,27 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+#忽略引入库的警告
+inhibit_all_warnings!
+
+def eros
+    #WeexSDK
+    pod 'WeexSDK', :git => 'https://github.com/bmfe/WeexiOSSDK.git', :tag => '0.19'
+    pod 'ErosPluginBaseLibrary', :git => 'https://github.com/bmfe/eros-plugin-ios-baseLibrary.git', :branch => 'master'
+    pod 'WXDevtool', :git => 'https://github.com/bmfe/weex-devtool-iOS.git', :configurations => ['Debug']
+
+    #Other Plugins
+    
+   end
+
+def common
+  pod 'CocoaAsyncSocket'
+  pod 'YYModel'
+
+  # Get device ID
+  pod 'SAMKeychain'
+  end
+
+target 'WeexEros' do
+    eros
+    common
+end
